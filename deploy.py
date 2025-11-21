@@ -2,16 +2,11 @@ import streamlit as st
 import pickle
 import pandas as pd
 
+
 st.title("Model Trial - Rekomendasi Target Offer")
 
-# Load model
-try:
-    with open('model_capstone_trial.pkl', 'rb') as f:
-        model = pickle.load(f)
-    st.success("Model berhasil dimuat!")
-except:
-    st.error("Model tidak ditemukan. Pastikan file 'model_capstone_trial.pkl' ada di folder yang sama.")
-    st.stop()
+with open('model_trial.pkl', 'rb') as f:
+    model = pickle.load(f)
 
 st.subheader("Input Data Pengguna")
 
